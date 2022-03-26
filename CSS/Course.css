@@ -1,0 +1,187 @@
+/* 轮播图 */
+.carousel {
+    max-width: 1800px; 
+    min-width: 1500px;
+    margin: auto;
+    margin-bottom: 4rem;
+}
+
+/* Since positioning the image, we need to help out the caption */
+
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+
+.carousel-item {
+    height: 32rem;
+}
+.carousel-item>img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-width: 100%;
+    height: 32rem;
+    z-index: -1;
+}
+.carousel-item::before{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.3);
+}
+
+.carousel-item a{
+    border-radius: 0;
+    transition: .4s;
+}
+.carousel-item a:hover{
+    font-size: 30px;
+}
+
+
+/* 团课报名 */
+#select {
+    position: relative;
+}
+#select::before {
+    content: "";
+    width: 200px;
+    height: 200px;
+    background-color: #c11;
+    border-radius: 100px;
+    position: absolute;
+    bottom: -26px;
+    left: 150px;
+}
+
+#select::after {
+    content: "";
+    width: 400px;
+    height: 400px;
+    background-color: #ffc107;
+    border-radius: 200px;
+    position: absolute;
+    top: -26px;
+    right: 255px;
+    z-index: -1;
+}
+
+#select>div{
+    border-radius: 10px;
+    background: linear-gradient(
+        to right bottom,
+        rgba(255,255,255,.6),
+        rgba(255,255,255,.1
+        ),
+    );
+    backdrop-filter: blur(8px);
+    box-shadow: 10px 10px 20px rgba(0,0,0,.2);
+    border-top: 1px solid rgba(255,255,255,.8);
+    border-left: 1px solid rgba(255,255,255,.8);
+}
+
+.selectTop {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #FF0000;
+}
+
+.selectTop .selectTopTitle {
+    width: 100%;
+    height: 35px;
+    font-size: 30px;
+}
+
+#selectFilter {
+    padding: 0;
+    margin: 10px auto;
+    list-style: none;
+    font-size: 0;
+    text-align: center;
+}
+
+#selectFilter li {
+    width: 45px;
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    color: #000;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 0;
+    background: #fff;
+    border: 2px solid #883333;
+    transition: .3s;
+}
+
+#selectFilter li:hover, #selectFilter li.filter-active {
+    background: #CC1111;
+    color: #fff;
+}
+.selectContainer .card {
+    height: 220px;
+    background: url(../MATERIAL/img/team-2.jpg) no-repeat;
+    background-size: 258px;
+}
+
+.selectContainer .card>div {
+    background: rgba(0,0,0,.2);
+}
+
+.selectContainer .card button {
+    transition: .4s;
+}
+
+.selectContainer .card button:hover {
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #f30;
+    border-color: #F30;
+}
+
+
+/* 实用工具 */
+
+
+#compute .tool a:nth-child(1) {
+    background: url(../MATERIAL/img/compute.jpg) no-repeat;
+    background-size: 90px;
+}
+#compute .tool a:nth-child(2) {
+    color: #222;
+}
+.computeTop {
+    width: 100%;
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #FF0000;
+}
+
+.computeTop .computeTopTitle {
+    width: 100%;
+    height: 35px;
+    font-size: 30px;
+}
+#compute .tool a:nth-child(2) p{
+    overflow: hidden;
+    height: 64px;
+    margin-bottom: 0;
+}
+#compute .modal-backdrop {
+    margin-top: 0;
+    z-index: 10049;
+}
+
+.jconfirm-scrollpane div.row {
+    justify-content: center;
+}

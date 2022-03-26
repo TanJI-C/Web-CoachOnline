@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet" href="../MATERIAL/lib/layui-v2.6.8/layui/css/layui.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/bootstrap/icon.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/animate/animate.min.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/LoginRegister.css">
+
+    <script src="../MATERIAL/lib/js/jquery-3.3.1.js"></script>
+    <script src="../MATERIAL/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="../MATERIAL/lib/js/qrcode.min.js"></script>
+</head>
+
+<body style="background: url(../MATERIAL/img/g.jpg) no-repeat; background-size: 100%; ">
+
+    <div id="loader">
+        <div class="contain">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <!-- header start -->
+    <div id="header">
+        <div class="container-fluid  d-flex justify-content-between">
+            <div class="navigation">
+                <ul class="list-unstyled d-flex justify-content-start align-items-center">
+                    <li class="headerLogo">
+                        <a href="HomePage.html">
+                            <img src="../MATERIAL/logo/red_white_logo.png" alt="金轮健身">
+                        </a>
+                    </li>
+                    <li><a href="HomePage.html">首页</a></li>
+                    <li><a href="Course.html">教程</a></li>
+                    <li><a href="CoachAppointment.html">教练预约</a></li>
+                </ul>
+            </div>
+            <div class="user">
+                <div class="loginOut">
+                    <ul class="list-unstyled d-flex justify-content-start align-items-center">
+                        <li><a href="LoginRegister.html">登录</a></li>
+                        <li><a href="LoginRegister.html">注册</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- header end -->
+    <div id="loginRegister">
+        <div>
+            <div id='startWrap'>
+                <div id='Close' style="display: none;">
+                    <i class="bi bi-x-lg" style="color: black; font-size: 25px;"></i>
+                </div>
+                <br />
+                <!--登录框-->
+                <div id="loginContainer">
+                    <div id="lab1">
+                        <span id="labLogin">会员登录</span>
+                        <span id="labToRegist">
+                            &emsp;还没有账号&nbsp;
+                            <span id='toRegist' style="color: #EB9316;cursor: pointer;">立即注册</span>
+                        </span>
+                    </div>
+                    <div>
+                        <span id="labType1">手机号/账号登陆</span>
+                    </div>
+                    <form id="formContainer1">
+                        <input type="text" class="form-control" placeholder="手机号/用户名" id="loginNumber" required="">
+                        <input type="password" class="form-control" placeholder="密码" id="loginPassword" required="">
+                        <div class="row justify-content-center" style="color: black;">
+                            <div class="col-4">
+                                <input id="userLogin" type="radio" name="loginType" value="user" checked>
+                                <label for="userLogin">用户登录</label>
+                            </div>
+                            <div class="col-4">
+                                <input id="coachLogin" type="radio" name="loginType" value="coach">
+                                <label for="coachLogin">教练登录</label>
+                            </div>
+                        </div>
+                        <input type="submit" value="登录" class="btn btn-warning" id="loginBtn" />
+                        <div id="rememberOrfindPwd">
+                            <input name="remeber" id="remember" type="checkbox" style="margin-bottom: -1.5px;" />
+                            <label style="color:#000000" for="remember">
+                                记住密码
+                            </label>
+                        </div>
+                    </form>
+                </div>
+                <!-- 会员注册 -->
+                <div id='registContainer'>
+                    <div id="lab1">
+                        <span id="labLogin">会员注册</span>
+                        <span id="labToLogin">
+                            &emsp;已有账号&nbsp;
+                            <span id='toLogin' style="color: #EB9316;cursor: pointer;">立即登录</span>
+                        </span>
+                    </div>
+                    <form id="formContainer2" style="padding-top: 25px;">
+                        <input type="text" class="form-control" placeholder="用户名" id="registAccount" required="">
+                        <input type="password" class="form-control" placeholder="密码" id="registPassword1" required="">
+                        <input type="text" class="form-control" placeholder="手机号" id="registPhone" required="">
+                        <div>
+                            <input type="text" class="form-control" placeholder="验证码" id="registVcode" required="">
+                            <input id="getVCode" type="button" class="btn btn-warning" value="点击发送验证码"
+                                onclick="sendCode(this)" />
+                        </div>
+                        <div class="row justify-content-center" style="color: black;">
+                            <div class="col-4">
+                                <input id="userRegist" type="radio" value="user" name="registType" checked>
+                                <label for="userRegist">用户注册</label>
+                            </div>
+                            <div class="col-4">
+                                <input id="coachRegist" type="radio" value="coach" name="registType">
+                                <label for="coachRegist">教练注册</label>
+                            </div>
+                        </div>
+                        <input type="submit" value="注册" class="btn btn-danger" id="registBtn">
+                    </form>
+
+                </div>
+            </div>
+            <div class="myBtnGroup">
+                <a id="loginStart" class="btn">登陆</a>
+                <a id="registStart" class="btn">注册</a>
+            </div>
+            <div class="myBtnGroup">
+                <a id="loginAdminStart" class="btn" data-bs-toggle="modal" data-bs-target="#exampleModal">管理员登录</a>
+            </div>
+
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModal" tabindex="-1">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <div id="qrcode" style="width: 250px;height: 250px; margin: 15px auto;">
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-warning" onclick="window.open('AdminInfo.html')">确定</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="footerContact">
+                        <h2>联系</h2>
+                        <p><i class="bi bi-geo-alt-fill"></i>冬筑</p>
+                        <p><i class="bi bi-telephone-fill"></i>012 345 67890</p>
+                        <p><i class="bi bi-envelope-fill"></i>123@qq.com</p>
+                        <div class="footerSocial">
+                            <a href=""><i class="layui-icon layui-icon-login-wechat"></i></a>
+                            <a href=""><i class="layui-icon layui-icon-login-qq"></i></a>
+                            <a href=""><i class="layui-icon layui-icon-login-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footerLink">
+                        <h2>服务</h2>
+                        <a href="UserInfo.html">课程安排</a>
+                        <a href="CoachAppointment.html">教练预约</a>
+                        <a href="https://www.bilibili.com/video/BV1R64y1d7pm?from=search&seid=1994748057239282561">肌肉金轮</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footerLink">
+                        <h2>页面</h2>
+                        <a href="Course.html">教程</a>
+                        <a href="CoachAppointment.html">教练预约</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="newsLetter">
+                        <h2>新闻</h2>
+                        <p>
+                            我不知道这里应该要写什么,但是总应该写点东西在这里,所以写了这些东西,好了,字数已经够了.
+                        </p>
+                        <div class="form">
+                            <input class="form-control" placeholder="肌肉金轮">
+                            <button class="btn">搜索</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footerMenu">
+            <div class="f-menu">
+                <a href="" ">关于我们</a>
+                <a href="" ">招贤纳士</a>
+                <a href="" ">广告服务</a>
+                <a href="" ">开发助手</a>
+                <a href="" ">问与回答</a>
+            </div>
+        </div>
+        <div class="container copyright ">
+            <div class="row ">
+                <div class="col-6 ">
+                    <p>&copy; <a href="# ">金轮健康有限公司</a>, 保留所有权利.</p>
+                </div>
+                <div class="col-6 ">
+                    <p>Designed By <a href=" ">Tan_JI</a></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("#footer .footerLink a ").prepend('<i class="bi bi-caret-right-fill "></i> ');
+        </script>
+
+    </div>
+
+    <script src="../JS/LoginRegister.js"></script>
+    <script src="../JS/js.js"></script>
+
+</body>
+
+</html>

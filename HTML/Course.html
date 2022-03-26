@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../MATERIAL/lib/layui-v2.6.8/layui/css/layui.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/bootstrap/icon.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/animate/animate.min.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/Course.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/jquery-confirm/jquery-confirm.css">
+
+    <script src="../MATERIAL/lib/js/jquery-3.3.1.js"></script>
+    <script src="../MATERIAL/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="../MATERIAL/lib/js/isotope.pkgd.min.js"></script>
+    <script src="../MATERIAL/lib/jquery-confirm/jquery-confirm.js"></script>
+    <script src="../MATERIAL/lib/js/qrcode.min.js"></script>
+
+
+</head>
+
+<body>
+    <div id="loader">
+        <div class="contain">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <div id="header">
+        <div class="container-fluid  d-flex justify-content-between">
+            <div class="navigation">
+                <ul class="list-unstyled d-flex justify-content-start align-items-center">
+                    <li class="headerLogo">
+                        <a href="HomePage.html">
+                            <img src="../MATERIAL/logo/red_white_logo.png" alt="金轮健身">
+                        </a>
+                    </li>
+                    <li><a href="HomePage.html">首页</a></li>
+                    <li><a href="Course.html">教程</a></li>
+                    <li><a href="CoachAppointment.html">教练预约</a></li>
+                </ul>
+            </div>
+            <div class="user">
+                <div class="login">
+                    <ul class="list-unstyled d-flex justify-content-start align-items-center">
+                        <li class="userPhoto">
+                            <a href="UserInfo.html">
+                                <img src="../MATERIAL/img/userPhoto.jpg" alt="">
+                            </a>
+                        </li>
+                        <li><a href="UserInfo.html">用户信息</a></li>
+                        <li><a href="CoachInfo.html">教练信息</a></li>
+                        <li><a href="AdminInfo.html">管理员</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="../MATERIAL/img/d.jpg" class="d-block w-100" style="object-fit: cover;" alt="Carousel Image">
+                <div class="carousel-caption text-start">
+                    <h1>短期强化课</h1>
+                    <p>短期高强度的训练, 庖丁解牛般对你的肌肉进行掌控</p>
+                    <p><a class="btn btn-lg btn-warning" href="#select">即刻报名</a></p>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../MATERIAL/img/e.jpg" class="d-block w-100" style="object-fit: cover;" alt="Carousel Image">
+                <div class="container">
+                    <div class="carousel-caption">
+                        <h1>长期蜕变课</h1>
+                        <p>细致入微是我们的代名词, 对于你的身体, 我们从不含糊</p>
+                        <p><a class="btn btn-lg btn-warning" href="#select">即刻报名</a></p>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="../MATERIAL/img/f.jpg" class="d-block w-100" style="object-fit: cover;" alt="Carousel Image">
+                <div class="container">
+                    <div class="carousel-caption text-end">
+                        <h1>专项练习班</h1>
+                        <p>专业指导, 论成熟化成熟化, 我们从不服人</p>
+                        <p><a class="btn btn-lg btn-warning" href="#select">即刻报名</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div id="select">
+        <div class="container px-4 py-5" style="width: 1320px;">
+            <div class="selectTop">
+                <div class="selectTopTitle">
+                    <i class="bi bi-grid-1x2-fill" style="color: #FF3300;"></i>
+                    <span>团课报名</span>
+                </div>
+            </div>
+            <div class="px-3 py-3" style="height: 760px;">
+                <div class="row">
+                    <div class="col-1">                                                 <!-- 导航栏 -->
+                        <ul id="selectFilter">
+                            <li class="myCourse" data-filter=".myCourse">我的课程</li>
+                            <li class="filter-active" data-filter=".all">所有课程</a></li>
+                            <li data-filter=".short">短期强化班</a></li>
+                            <li data-filter=".long">长期蜕变班</a></li>
+                            <li data-filter=".special">专项练习班</a></li>
+                        </ul>
+                    </div>
+                    <div class="selectContainer col-11 row row-cols-4">         <!-- 装团课卡片的盒子 -->
+                        <div class="col all long py-3" style="width: 282px;">
+                            <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                                <div class="d-flex flex-column h-100 p-4 pb-2text-white text-shadow-1">
+                                    <h2 class="mt-3 mb-4 lh-1 fw-bold" style="font-size: 30px;">腹肌撕裂者
+                                    </h2>
+                                    <ul class="d-flex list-unstyled mt-auto">
+                                        <li class="me-auto">
+                                            <button type="button" class="choiceButton btn btn-warning "
+                                                style="border-radius: 0">购买</button>
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            
+                                            <s><small>2000￥</small></s>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            
+                                            <small>200</small><i class="bi bi-currency-yen"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col all short py-3" style="width: 282px;">
+                            <div class="card card-cover overflow-hidden text-white bg-light rounded-5 shadow-lg">
+                                <div class="d-flex flex-column h-100 p-4 pb-2text-white text-shadow-1">
+                                    <h2 class="mt-3 mb-4 lh-1 fw-bold" style="font-size: 30px;">腹肌撕裂者
+                                    </h2>
+                                    <ul class="d-flex list-unstyled  mt-auto">
+                                        <li class="me-auto">
+                                            <button type="button" class="choiceButton btn btn-warning "
+                                                style="border-radius: 0">购买</button>
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            
+                                            <s><small>2000￥</small></s>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            
+                                            <small>200</small><i class="bi bi-currency-yen"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col all long py-3" style="width: 282px;">
+                            <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                                <div class="d-flex flex-column h-100 p-4 pb-2text-white text-shadow-1">
+                                    <h2 class="mt-3 mb-4 lh-1 fw-bold" style="font-size: 30px;">腹肌撕裂者
+                                    </h2>
+                                    <ul class="d-flex list-unstyled  mt-auto">
+                                        <li class="me-auto">
+                                            <button type="button" class="choiceButton btn btn-warning "
+                                                style="border-radius: 0">购买</button>
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            
+                                            <s><small>2000￥</small></s>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            
+                                            <small>200</small><i class="bi bi-currency-yen"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col all special py-3" style="width: 282px;">
+                            <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                                <div class="d-flex flex-column h-100 p-4 pb-2text-white text-shadow-1">
+                                    <h2 class="mt-3 mb-4 lh-1 fw-bold" style="font-size: 30px;">腹肌撕裂者
+                                    </h2>
+                                    <ul class="d-flex list-unstyled  mt-auto">
+                                        <li class="me-auto">
+                                            <button type="button" class="choiceButton btn btn-warning "
+                                                style="border-radius: 0">购买</button>
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            
+                                            <s><small>2000￥</small></s>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            
+                                            <small>200</small><i class="bi bi-currency-yen"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col all special py-3" style="width: 282px;">
+                            <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                                <div class="d-flex flex-column h-100 p-4 pb-2text-white text-shadow-1">
+                                    <h2 class="mt-3 mb-4 lh-1 fw-bold" style="font-size: 30px;">腹肌撕裂者
+                                    </h2>
+                                    <ul class="d-flex list-unstyled  mt-auto">
+                                        <li class="me-auto">
+                                            <button type="button" class="choiceButton btn btn-warning "
+                                                style="border-radius: 0">购买</button>
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            
+                                            <s><small>2000￥</small></s>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            
+                                            <small>200</small><i class="bi bi-currency-yen"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col all short py-3" style="width: 282px;">
+                            <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                                <div class="d-flex flex-column h-100 p-4 pb-2text-white text-shadow-1">
+                                    <h2 class="mt-3 mb-4 lh-1 fw-bold" style="font-size: 30px;">腹肌撕裂者
+                                    </h2>
+                                    <ul class="d-flex list-unstyled  mt-auto">
+                                        <li class="me-auto">
+                                            <button type="button" class="choiceButton btn btn-warning "
+                                                style="border-radius: 0">购买</button>
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            
+                                            <s><small>2000￥</small></s>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            
+                                            <small>200</small><i class="bi bi-currency-yen"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col all long py-3" style="width: 282px;">
+                            <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                                <div class="d-flex flex-column h-100 p-4 pb-2text-white text-shadow-1">
+                                    <h2 class="mt-3 mb-4 lh-1 fw-bold" style="font-size: 30px;">腹肌撕裂者
+                                    </h2>
+                                    <ul class="d-flex list-unstyled  mt-auto">
+                                        <li class="me-auto">
+                                            <button type="button" class="choiceButton btn btn-warning "
+                                                style="border-radius: 0">购买</button>
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            
+                                            <s><small>2000￥</small></s>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            
+                                            <small>200</small><i class="bi bi-currency-yen"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col all special py-3" style="width: 282px;">
+                            <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                                <div class="d-flex flex-column h-100 p-4 pb-2text-white text-shadow-1">
+                                    <h2 class="mt-3 mb-4 lh-1 fw-bold" style="font-size: 30px;">腹肌撕裂者
+                                    </h2>
+                                    <ul class="d-flex list-unstyled  mt-auto">
+                                        <li class="me-auto">
+                                            <button type="button" class="choiceButton btn btn-warning "
+                                                style="border-radius: 0">购买</button>
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            
+                                            <s><small>2000￥</small></s>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            
+                                            <small>200</small><i class="bi bi-currency-yen"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col all short py-3" style="width: 282px;">
+                            <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                                <div class="d-flex flex-column h-100 p-4 pb-2text-white text-shadow-1">
+                                    <h2 class="mt-3 mb-4 lh-1 fw-bold" style="font-size: 30px;">腹肌撕裂者
+                                    </h2>
+                                    <ul class="d-flex list-unstyled  mt-auto">
+                                        <li class="me-auto">
+                                            <button type="button" class="choiceButton btn btn-warning "
+                                                style="border-radius: 0">购买</button>
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            
+                                            <s><small>2000￥</small></s>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            
+                                            <small>200</small><i class="bi bi-currency-yen"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col all long py-3" style="width: 282px;">
+                            <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                                <div class="d-flex flex-column h-100 p-4 pb-2text-white text-shadow-1">
+                                    <h2 class="mt-3 mb-4 lh-1 fw-bold" style="font-size: 30px;">腹肌撕裂者
+                                    </h2>
+                                    <ul class="d-flex list-unstyled  mt-auto">
+                                        <li class="me-auto">
+                                            <button type="button" class="choiceButton btn btn-warning "
+                                                style="border-radius: 0">购买</button>
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            
+                                            <s><small>2000￥</small></s>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            
+                                            <small>200</small><i class="bi bi-currency-yen"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col all special py-3" style="width: 282px;">
+                            <div class="card card-cover overflow-hidden text-white bg-dark rounded-5 shadow-lg">
+                                <div class="d-flex flex-column h-100 p-4 pb-2text-white text-shadow-1">
+                                    <h2 class="mt-3 mb-4 lh-1 fw-bold" style="font-size: 30px;">腹肌撕裂者
+                                    </h2>
+                                    <ul class="d-flex list-unstyled  mt-auto">
+                                        <li class="me-auto">
+                                            <button type="button" class="choiceButton btn btn-warning  "
+                                                style="border-radius: 0">购买</button>
+                                        </li>
+                                        <li class="d-flex align-items-center me-3">
+                                            <s><small>2000￥</small></s>
+                                        </li>
+                                        <li class="d-flex align-items-center">
+                                            <small>200</small><i class="bi bi-currency-yen"></i>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div id="compute">
+        <div class="container px-4 py-5" id="icon-grid" style="width: 1320px;">
+            <div class="computeTop">
+                <div class="computeTopTitle">
+                    <i class="bi bi-grid-1x2-fill" style="color: #FF3300;"></i>
+                    <span>实用工具</span>
+                </div>
+            </div>
+            
+            <div class="row row-cols-4 g-4 py-3">
+                <div class="tool col px-4"><!-- 五个计算工具 -->
+                    <div class="row">
+                        <a class="col-4" data-bs-toggle="offcanvas" href="#offcanvasCompute">
+                        </a>
+                        <a class="col-8" data-bs-toggle="offcanvas" href="#offcanvasCompute" role="button">
+                            <h4 class="fw-bold mb-0">一分钟了解自已</h4>
+                            <p>
+                                1分钟彻底了解自己的标准体重、健康体重范围、BMI指数（即身体质量指数）、基础代谢率和燃脂运动中低强度运动心率，看看自己是否需要减肥了。身体质量指数(BMI)：评估体重与身高比例的常用工具，适用范围：18至65岁的人士。儿童、发育中的青少年、孕妇、乳母、老人及身型健硕的运动员除外。
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="tool col px-4">
+                    <div class="row">
+                        <a class="col-4" data-bs-toggle="offcanvas" href="#offcanvasCompute">
+                        </a>
+                        <a class="col-8" data-bs-toggle="offcanvas" href="#offcanvasCompute" role="button">
+                            <h4 class="fw-bold mb-0">标准体重计算</h4>
+                            <p>
+                                您的体重符合标准吗？使用标准体重计算器，请在下面选择您的性别，输入身高，最后计算得出标准体重。计算适用范围：
+                                女性：19岁到69岁，身高在152cm到176cm。
+                                男性：19岁到69岁，身高在152cm到188cm。
+                                (BMI)：评估体重与身高比例的常用工具，适用范围：18至65岁的人士。儿童、发育中的青少年、孕妇、乳母、老人及身型健硕的运动员除外。
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="tool col px-4">
+                    <div class="row">
+                        <a class="col-4" data-bs-toggle="offcanvas" href="#offcanvasCompute">
+                        </a>
+                        <a class="col-8" data-bs-toggle="offcanvas" href="#offcanvasCompute" role="button">
+                            <h4 class="fw-bold mb-0">身体质量指数</h4>
+                            <p>
+                                BMI[Body Mass Index]
+                                即BMI指数，也叫身体质量指数，是衡量是否肥胖和标准体重的重要指标。适用范围：18至65岁的人士。儿童、发育中的青少年、孕妇、乳母、老人及身型健硕的运动员除外。世界卫生组织认为BMI指数保持在22左右是比较理想的。
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="tool col px-4">
+                    <div class="row">
+                        <a class="col-4" data-bs-toggle="offcanvas" href="#offcanvasCompute">
+                        </a>
+                        <a class="col-8" data-bs-toggle="offcanvas" href="#offcanvasCompute" role="button">
+                            <h4 class="fw-bold mb-0">基础代谢计算</h4>
+                            <p>
+                                基础代谢率（BMR）是指人体在清醒而又极端安静的状态下，不受肌肉活动、环境温度、食物及精神紧张等影响时的能量代谢率。
+                                基础代谢率对减肥有非常大的影响，每天适量的运动有助于提高身体的基础代谢率，而节食(极端是绝食)会降低人的基础代谢率。通过性别，年龄，身高和体重能粗略计算基础代谢率。
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <div class="tool col px-4"><!-- 卡路里计算器 -->
+                    <div class="row">
+                        <a class="col-4" data-bs-toggle="modal" href="#modalCompute">
+                        </a>
+                        <a class="col-8" data-bs-toggle="modal" href="#modalCompute" role="button">
+                            <h4 class="fw-bold mb-0">卡路里计算器</h4>
+                            <p>
+                                简单的卡路里计算器,计算你的热量消耗是多少
+                            </p>
+                        </a>
+                    </div>
+                </div>
+                <!-- 左侧幕布 -->
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasCompute" style="z-index: 10050; margin-top: 0; width: 37%;">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title display-6" id="offcanvasComputeLabel">Offcanvas</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <div class="row">
+                            <div class="col-12 card my-3">
+                                <div class="card-body h5">
+                                    This is some text within a card body.
+                                </div>
+                            </div>
+                            <div class="col-12 py-3" style="background-color: #f2f1f8;">
+                                <div id="computeForm" computeType="1">
+                                    <div class="control-group">
+                                        <input type="text" class="form-control border-0 p-4" id="age" placeholder="芳龄几许" required="required">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="form-control border-0 p-4" id="height" placeholder="身高多少" required="required">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="form-control border-0 p-4" id="weight" placeholder="什么吨位" required="required">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group row justify-content-center">
+                                        <div class="form-check col-3">
+                                            <input class="form-check-input" value="1" type="radio" name="sex" id="man">
+                                            <label class="form-check-label" for="man">男</label>
+                                        </div>
+                                        <div class="form-check col-3">
+                                            <input class="form-check-input" value="2" type="radio" name="sex" id="woman" checked>
+                                            <label class="form-check-label" for="woman">女</label>
+                                        </div>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="text-center">
+                                        <button class="btn btn-primary py-3 px-5" id="sendMessageButton">计算</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <ul class="list-group list-group-flush py-5 d-none" id="computeResult">
+                            <li class="list-group-item">
+                                <div>您的身体质量指数(BMI)为<span class="text-danger h5"></span></div>
+                                <table class="table">
+                                    <thead class="">
+                                        <tr>
+                                            <th colspan="4">成年人身体质量指数</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr style="font-size: 12px">
+                                            <td>轻体重BMI</th>
+                                            <td>健康体重BMI</td>
+                                            <td>超重BMI</td>
+                                            <td>肥胖BMI</td>
+                                        </tr>
+                                        <tr style="font-size: 13px">
+                                            <td>BMI＜18.5</th>
+                                            <td>18.5≤BMI＜24</td>
+                                            <td>24≤BMI＜28</td>
+                                            <td>28≤BMI</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </li>
+                            <li class="list-group-item">您的健康体重范围为<span class="text-danger h5">63.0~77.0</span>公斤</li>
+                            <li class="list-group-item">您的年龄身高对应标准体重为<span class="text-danger h5">70</span>公斤</li>
+                            <li class="list-group-item">您的基础代谢率为<span class="text-danger h5">1666</span>大卡</li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- 卡路里计算器模态框 -->
+                <div class="modal fade" id="modalCompute" tabindex="-1">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">卡路里计算器</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                            </div>
+                            <div class="modal-body" style="background-color: #f2f1f8;">
+                                <div id="computeForm" computeType="1">
+                                    <div class="control-group">
+                                        <input type="text" class="form-control border-0 p-2" id="calorieHeight" placeholder="身高多少" required="required">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="form-control border-0 p-2" id="calorieWeight" placeholder="什么吨位" required="required">
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <select id="calorieExercise" class="form-select border-0 p-2">
+                                            <option value="0" selected>选择您的运动</option>
+                                            <option value="1">跑步(6.5公里/每小时)</option>
+                                            <option value="2">普拉提</option>
+                                            <option value="3">单车训练(150瓦特 中等强度)</option>
+                                            <option value="4">划船器</option>
+                                            <option value="5">骑自行车(19-22.4公里/每小时)</option>
+                                            <option value="6">山地爬坡</option>
+                                        </select>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <select id="calorieTime" class="form-select border-0 p-2">
+                                            <option value="0" selected>选择您的运动时间</option>
+                                            <option value="1">一小时</option>
+                                            <option value="2">两小时</option>
+                                            <option value="3">三小时</option>
+                                        </select>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <select id="calorieFood" class="form-select border-0 p-2">
+                                            <option value="0" selected>选择您的饮食(单位: 大卡/100g)</option>
+                                            <option value="1">米饭</option>
+                                            <option value="2">燕麦片</option>
+                                            <option value="3">巧克力</option>
+                                            <option value="4">冰淇淋</option>
+                                            <option value="5">煮鸡蛋</option>
+                                            <option value="6">猪瘦肉</option>
+                                        </select>
+                                        <p class="help-block text-danger"></p>
+                                    </div>
+                                    <div class="control-group">
+                                        <input type="text" class="form-control border-0 p-2" id="calorieResult" placeholder="结果会在这里出现">
+                                        <p class="help-block text-danger"></p>
+                                    </div>                                    
+                                    <div class="text-center">
+                                        <button class="btn btn-primary py-3 px-5" id="computeCalorie">计算</button>
+                                    </div>
+                                </div>                            
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="footerContact">
+                        <h2>联系</h2>
+                        <p><i class="bi bi-geo-alt-fill"></i>冬筑</p>
+                        <p><i class="bi bi-telephone-fill"></i>012 345 67890</p>
+                        <p><i class="bi bi-envelope-fill"></i>123@qq.com</p>
+                        <div class="footerSocial">
+                            <a href=""><i class="layui-icon layui-icon-login-wechat"></i></a>
+                            <a href=""><i class="layui-icon layui-icon-login-qq"></i></a>
+                            <a href=""><i class="layui-icon layui-icon-login-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footerLink">
+                        <h2>服务</h2>
+                        <a href="UserInfo.html">课程安排</a>
+                        <a href="CoachAppointment.html">教练预约</a>
+                        <a href="https://www.bilibili.com/video/BV1R64y1d7pm?from=search&seid=1994748057239282561">肌肉金轮</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footerLink">
+                        <h2>页面</h2>
+                        <a href="Course.html">教程</a>
+                        <a href="CoachAppointment.html">教练预约</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="newsLetter">
+                        <h2>新闻</h2>
+                        <p>
+                            我不知道这里应该要写什么,但是总应该写点东西在这里,所以写了这些东西,好了,字数已经够了.
+                        </p>
+                        <div class="form">
+                            <input class="form-control" placeholder="肌肉金轮">
+                            <button class="btn">搜索</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footerMenu">
+            <div class="f-menu">
+                <a href="" ">关于我们</a>
+                <a href="" ">招贤纳士</a>
+                <a href="" ">广告服务</a>
+                <a href="" ">开发助手</a>
+                <a href="" ">问与回答</a>
+            </div>
+        </div>
+        <div class="container copyright ">
+            <div class="row ">
+                <div class="col-6 ">
+                    <p>&copy; <a href="# ">金轮健康有限公司</a>, 保留所有权利.</p>
+                </div>
+                <div class="col-6 ">
+                    <p>Designed By <a href=" ">Tan_JI</a></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("#footer .footerLink a ").prepend('<i class="bi bi-caret-right-fill "></i> ');
+        </script>
+    </div>
+    <script src="../JS/js.js"></script>
+    <script src="../JS/Course.js"></script>
+
+</body>
+
+</html>

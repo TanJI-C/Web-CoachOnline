@@ -1,0 +1,165 @@
+#loginRegister {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: rgba(0,0,0,.4);
+}
+#loginRegister>div {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+}
+
+#startWrap {
+	/*position:absolute;*/
+	height: 0px;
+	width: 500px;
+	background: #FFF;
+	color: white;
+	text-align: center;
+	line-height: 40px;
+}
+
+#Close {
+	float: right;
+	height: 0px;
+	width: 0px;
+	background: none;
+	color: white;
+	border-left: 1px solid white;
+	border-bottom: 1px solid white;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}
+
+#loginContainer,#registContainer {
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+	width: 500px;
+	text-align: center;
+}
+
+#lab1 {
+	width: 400px;
+	border-bottom: 1px solid #000000;
+	text-align: left;
+	font-family: '微软雅黑';
+}
+
+#labLogin {
+	font-size: 30px;
+	height: 40px;
+	color: #000000;
+}
+
+#labToRegist,#labToLogin {
+	font-size: 15px;
+	line-height: 55px;
+	float: right;
+	color: #000000;
+}
+
+#labType1 {
+	font-size: 16px;
+	color: #8C8C8C;
+}
+
+#loginNumber,
+#loginPassword {
+	height: 50px;
+	border-radius: 0;
+	margin-top: 10px;
+}
+
+/* 注册表单 开始 */
+#registAccount,
+#registPassword1,
+#regisPassword2,
+#registPhone,
+#registVcode
+{
+	height: 42px;
+	border-radius: 0;
+	margin-top: 5px;
+}
+#registVcode{
+	width:60%;
+	display: inline-block;
+}
+/* 注册表单 结束 */
+
+/*获取验证码*/
+#getVCode{
+	width:40%;
+	height: 40px;
+	border-radius: 0;
+	margin-top: 6px;
+	float: right;
+}
+/*登陆按钮*/
+#loginBtn {
+	width: 250px;
+	height: 40px;
+	border-radius: 0;
+	margin-top: 20px;
+}
+/*注册按钮*/
+#registBtn{
+	width: 330px;
+	height: 40px;
+	border-radius: 0;
+	margin-top: 20px;
+}
+/*记住密码，找回密码*/
+#rememberOrfindPwd {
+	height: 40px;
+	margin-top: 15px;
+}
+/*QQ登陆样式*/
+#loginQQ {
+	width: 150px;
+	height: 40px;
+	float: left;
+	border-radius: 0;
+}
+/*微博登陆样式*/
+#loginWB {
+	width: 150px;
+	height: 40px;
+	float: right;
+	border-radius: 0;
+}
+/*登陆表单容器*/
+#formContainer1 {
+	width: 330px;
+	height: 240px;
+	border-bottom: 1px solid #FFFFFF;
+}
+/*注册表单容器*/
+#formContainer2 {
+	display: flex;
+	flex-direction: column;
+	width: 350px;
+	border-bottom: 1px solid #FFFFFF;
+}
+
+.myBtnGroup {
+	display: flex;
+    justify-content: center;
+	background: linear-gradient(
+        to right bottom,
+        rgba(255,255,255,.6),
+        rgba(255,255,255,.3)
+    );
+    backdrop-filter: blur(8px);
+    box-shadow: 10px 10px 20px rgba(0,0,0,.2);
+}
+.myBtnGroup>a {
+    height: 40px;
+	width: 50%;
+    border-radius: 0;
+}

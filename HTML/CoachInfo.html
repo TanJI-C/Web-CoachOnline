@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../MATERIAL/lib/layui-v2.6.8/layui/css/layui.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/animate/animate.min.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/bootstrap/icon.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/layui-v2.6.8/layui/css/layui.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/UserInfo.css">
+
+
+    <script src="../MATERIAL/lib/js/jquery-3.3.1.js"></script>
+    <script src="../MATERIAL/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="../MATERIAL/lib/layui-v2.6.8/layui/layui.js"></script>
+    <script src="../MATERIAL/lib/js/isotope.pkgd.min.js"></script>
+
+</head>
+
+<body>
+    <div id="loader">
+        <div class="contain">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <div id="header">
+        <div class="container-fluid  d-flex justify-content-between">
+            <div class="navigation">
+                <ul class="list-unstyled d-flex justify-content-start align-items-center">
+                    <li class="headerLogo">
+                        <a href="HomePage.html">
+                            <img src="../MATERIAL/logo/red_white_logo.png" alt="金轮健身">
+                        </a>
+                    </li>
+                    <li><a href="HomePage.html">首页</a></li>
+                    <li><a href="Course.html">教程</a></li>
+                    <li><a href="CoachAppointment.html">教练预约</a></li>
+                </ul>
+            </div>
+            <div class="user">
+                <div class="login">
+                    <ul class="list-unstyled d-flex justify-content-start align-items-center">
+                        <li class="userPhoto">
+                            <a href="UserInfo.html">
+                                <img src="../MATERIAL/img/userPhoto.jpg" alt="">
+                            </a>
+                        </li>
+                        <li><a href="CoachInfo.html">教练信息</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="User">
+        <div class="container-fluid coachHeader">
+            <div class="container">
+                <div class="row" style="min-height: 200px">
+                    <div class="col-2 d-flex flex-column justify-content-center text-center">
+                        <div class="userAvatar" ng-click="layerCropt()">
+                        </div>                    
+                    </div>
+                    <div class="col-4 d-flex flex-column justify-content-center">
+                        <h3 class="display-4 text-white text-uppercase">教练</h3>
+                        <div class="d-inline-flex text-white">
+                            <p class="m-0 text-uppercase"><a class="text-white" href="">123456789</a></p>
+                            <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                            <p class="m-0 text-uppercase"><a class="text-white" href="">TanJI</a></p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex flex-column justify-content-center text-center userShortInfo">
+                        <h2>12</h2>
+                        <p>学生数量</p>
+                    </div>
+                    <div class="col-3 d-flex flex-column justify-content-center text-center userShortInfo">
+                        <h2>12</h2>
+                        <p>开课数量</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="infoContent" class="py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 px-4 ">
+                    <div class="nav flex-column leftBar">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#info-content-user">学生出勤管理</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#info-content-coachAppointment">私教预约管理</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#info-content-myself">我的信息</button>
+                    </div>
+                </div>
+                <div class="col-9 px-4">
+                    <div class="tab-content rightBar">
+                        <div class="tab-pane fade show active" id="info-content-user">
+                            <div class="px-3 py-3">
+                                <nav class="mb-3">
+                                    <div class="nav nav-tabs nav-justified" id="course-nav-tab">
+                                        <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#course-nav-1">腹肌训练课</button>
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#course-nav-2">胸肌增殖课</button>
+                                        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#course-nav-3">金轮道路课</button>
+                                    </div>
+                                </nav>
+                                <div class="tab-content px-3" id="course-nav-tabContent">
+                                    <div class="tab-pane fade show active" id="course-nav-1">
+                                        <table lay-filter="userTable" id="userTable">
+                                            <thead>
+                                                <tr>
+                                                    <th lay-data="{field:'ID', width:110, style:'background-color: #FFBB88; color: #fff;'}">课时\名字
+                                                    </th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">凯瑞</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">鲍勃</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">金轮</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">路西</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">阿萨</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">金轮</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">路西</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">特斯拉</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>第1节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第2节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第3节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第4节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第5节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第6节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第7节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第8节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第9节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第10节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第11节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第12节课</td>
+                                                </tr>
+                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade" id="course-nav-2">
+                                        <table lay-filter="userTable" id="userTable">
+                                            <thead>
+                                                <tr>
+                                                    <th lay-data="{field:'ID', width:110, style:'background-color: #FFBB88; color: #fff;'}">课时\名字
+                                                    </th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">凯瑞</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">鲍勃</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">金轮</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">路西</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">特斯拉</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>第1节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第2节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第3节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第4节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第5节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第6节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第7节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第8节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第9节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第10节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第11节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第12节课</td>
+                                                </tr>
+                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade" id="course-nav-3">
+                                        <table lay-filter="userTable" id="userTable">
+                                            <thead>
+                                                <tr>
+                                                    <th lay-data="{field:'ID', width:110, style:'background-color: #FFBB88; color: #fff;'}">课时\名字
+                                                    </th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">凯瑞</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">金轮</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">路西</th>
+                                                    <th lay-data="{field:'username', width:108, templet: '#userAttend', unresize: true}">特斯拉</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>第1节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第2节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第3节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第4节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第5节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第6节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第7节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第8节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第9节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第10节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第11节课</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>第12节课</td>
+                                                </tr>
+                            
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="userAttend" style="display: none;">
+                                    <input type="checkbox" name="lock" value="{{d.id}}" title="出勤" lay-filter="lockDemo" checked>
+                                </div>                            
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="info-content-coachAppointment">
+                            <div class="px-3 py-3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <ul id="courseFilter">
+                                            <li class="filter-active" data-filter = "*">所有预约</a></li>
+                                            <li data-filter = ".Monday" >周一</a></li>
+                                            <li data-filter = ".Tuesday">周二</a></li>
+                                            <li data-filter = ".Wednesday" >周三</a></li>
+                                            <li data-filter = ".Thursday" >周四</a></li>
+                                            <li data-filter = ".Friday">周五</a></li>
+                                            <li data-filter = ".Saturday" >周六</a></li> 
+                                            <li data-filter = ".Sunday">周七</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row courseContainer">
+                                    <div class="col-4 Tuesday py-3">
+                                        <div class="card bg-dark text-white">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay">
+                                              <h5 class="card-title">腹肌撕裂者</h5>
+                                              <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                              <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-4 Thursday py-3">
+                                        <div class="card bg-dark text-white">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay">
+                                              <h5 class="card-title">腹肌撕裂者</h5>
+                                              <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                              <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-4 Tuesday py-3">
+                                        <div class="card bg-dark text-white">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay">
+                                              <h5 class="card-title">腹肌撕裂者</h5>
+                                              <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                              <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-4 Wednesday py-3">
+                                        <div class="card bg-dark text-white">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay">
+                                              <h5 class="card-title">腹肌撕裂者</h5>
+                                              <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                              <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                                <script>
+
+                                </script> 
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="info-content-myself">
+                            <nav class="mb-3">
+                                <div class="nav nav-tabs nav-justified" id="user-nav-tab">
+                                    <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#user-nav-info">我的信息</button>
+                                </div>
+                            </nav>
+                            <div class="tab-content px-5" id="user-nav-tabContent">
+                                <div class="tab-pane fade show active" id="user-nav-info">
+                                    <div class="row">
+                                        <form>
+                                            <div class="row mb-3">
+                                                <label for="staticNickName" class="col-1 col-form-label">昵称</label>
+                                                <div class="col-10">
+                                                    <input type="text" readonly class="form-control-plaintext" id="staticNickName" value="好名字都被狗取了2">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="staticName" class="col-1 col-form-label">姓名</label>
+                                                <div class="col-10">
+                                                    <input type="text" readonly class="form-control-plaintext" id="staticName" value="冉乂">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="staticEmail" class="col-1 col-form-label">邮箱</label>
+                                                <div class="col-10">
+                                                    <input type="text" readonly class="form-control-plaintext" id="staticEmail" value="114514@qq.com">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="staticPhone" class="col-1 col-form-label">手机</label>
+                                                <div class="col-10">
+                                                    <input type="text" readonly class="form-control-plaintext" id="staticPhone" value="114514">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="staticSex" class="col-1 col-form-label">性别</label>
+                                                <div class="col-10">
+                                                    <input type="text" readonly class="form-control-plaintext" id="staticSex" value="男">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="staticBirth" class="col-1 col-form-label">生日</label>
+                                                <div class="col-10">
+                                                    <input type="text" readonly class="form-control-plaintext" id="staticBirth" value="2000/1/1">
+                                                </div>
+                                            </div>
+                                            <div class="row mb-3">
+                                                <label for="staticArea" class="col-1 col-form-label">地区</label>
+                                                <div class="col-10">
+                                                    <input type="text" readonly class="form-control-plaintext" id="staticArea" value="广东省">
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="footerContact">
+                        <h2>联系</h2>
+                        <p><i class="bi bi-geo-alt-fill"></i>冬筑</p>
+                        <p><i class="bi bi-telephone-fill"></i>012 345 67890</p>
+                        <p><i class="bi bi-envelope-fill"></i>123@qq.com</p>
+                        <div class="footerSocial">
+                            <a href=""><i class="layui-icon layui-icon-login-wechat"></i></a>
+                            <a href=""><i class="layui-icon layui-icon-login-qq"></i></a>
+                            <a href=""><i class="layui-icon layui-icon-login-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footerLink">
+                        <h2>服务</h2>
+                        <a href="UserInfo.html">课程安排</a>
+                        <a href="CoachAppointment.html">教练预约</a>
+                        <a href="https://www.bilibili.com/video/BV1R64y1d7pm?from=search&seid=1994748057239282561">肌肉金轮</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footerLink">
+                        <h2>页面</h2>
+                        <a href="Course.html">教程</a>
+                        <a href="CoachAppointment.html">教练预约</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="newsLetter">
+                        <h2>新闻</h2>
+                        <p>
+                            我不知道这里应该要写什么,但是总应该写点东西在这里,所以写了这些东西,好了,字数已经够了.
+                        </p>
+                        <div class="form">
+                            <input class="form-control" placeholder="肌肉金轮">
+                            <button class="btn">搜索</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footerMenu">
+            <div class="f-menu">
+                <a href="" ">关于我们</a>
+                <a href="" ">招贤纳士</a>
+                <a href="" ">广告服务</a>
+                <a href="" ">开发助手</a>
+                <a href="" ">问与回答</a>
+            </div>
+        </div>
+        <div class="container copyright ">
+            <div class="row ">
+                <div class="col-6 ">
+                    <p>&copy; <a href="# ">金轮健康有限公司</a>, 保留所有权利.</p>
+                </div>
+                <div class="col-6 ">
+                    <p>Designed By <a href=" ">Tan_JI</a></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("#footer .footerLink a ").prepend('<i class="bi bi-caret-right-fill "></i> ');
+        </script>
+    </div>
+    <script src="../JS/CoachInfo.js"></script>
+    <script src="../JS/js.js"></script>
+</body>
+
+</html>

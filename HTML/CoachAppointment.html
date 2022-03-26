@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.80.0">
+    <title>Appointment</title>
+
+    <link rel="stylesheet" href="../MATERIAL/lib/bootstrap/icon.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/animate/animate.min.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/CoachAppointmenr.css">
+
+    <script src="../MATERIAL/lib/js/jquery-3.3.1.js"></script>
+    <script src="../MATERIAL/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="../MATERIAL/lib/js/qrcode.min.js"></script>
+</head>
+
+<body>
+    <div id="loader">
+        <div class="contain">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+    <div id="header">
+        <div class="container-fluid  d-flex justify-content-between">
+            <div class="navigation">
+                <ul class="list-unstyled d-flex justify-content-start align-items-center">
+                    <li class="headerLogo">
+                        <a href="HomePage.html">
+                            <img src="../MATERIAL/logo/red_white_logo.png" alt="金轮健身">
+                        </a>
+                    </li>
+                    <li><a href="HomePage.html">首页</a></li>
+                    <li><a href="Course.html">教程</a></li>
+                    <li><a href="CoachAppointment.html">教练预约</a></li>
+                </ul>
+            </div>
+            <div class="user">
+                <div class="login">
+                    <ul class="list-unstyled d-flex justify-content-start align-items-center">
+                        <li class="userPhoto">
+                            <a href="UserInfo.html">
+                                <img src="../MATERIAL/img/userPhoto.jpg" alt="">
+                            </a>
+                        </li>
+                        <li><a href="UserInfo.html">用户信息</a></li>
+                        <li><a href="CoachInfo.html">教练信息</a></li>
+                        <li><a href="AdminInfo.html">管理员</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="coachInfo">
+        <div class="topImg">
+            <img src="../MATERIAL/img/trainer/1.jpeg" class="d-block w-100" alt="Top Image">
+            <div class="caption">
+                <a class="btn animated fadeInUp" href="#excellCoach">专业团队</a>
+            </div>
+        </div>
+        <div class="allCoach container-fluid mt-5" id="allCoach">
+            <div class="container">
+                <div class="allCoachTop">
+                    <h2>多种选择,任君挑选</h2>
+                </div>
+                <div class="coachContent row mt-5">
+                    <div class="col-4">
+                        <div class="card position-relative">
+                            <div class="position-relative overflow-hidden rounded">
+                                <img class="card-img-top" src="../MATERIAL/img/trainer/2.jpeg" alt="">
+                                <div class="coachOverlay">
+                                    <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom">预约教练</button>
+                                </div>
+                            </div>
+                            <div class="position-absolute start-0 bottom-0 w-100 rounded-bottom text-center p-4">
+                                <h5 class="text-uppercase text-light">John Deo</h5>
+                                <p class="text-uppercase text-secondary m-0">教练</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="excellCoach container-fluid mt-5 py-3" id="excellCoach">
+            <div class="container">
+                <div class="excellCoachTop">
+                    <h2>八个jojo,十六个蛋</h2>
+                    <h1>个个都是男子汉</h2>
+                </div>
+                <div class="box">
+                    <div class="excellCard">
+                        <a type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom"><img src="../MATERIAL/img/trainer/jo1.jpg" alt=""></a>
+                        <div style="position: absolute; top: 10%; left: 10%; color: #ddd; font-family: KaiTi;">
+                            <div class="position-absolute start-0 top-0" style="width: 30px;">
+                                <h3></h3>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom">
+            <div class="container">
+                <div class="py-5 d-flex flex-column justify-content-center align-items-center">
+                    <img class="mb-4" src="../MATERIAL/logo/red_white_logo.png" alt="" width="180">
+                    <h2 class="mb-3">教练即刻预约</h2>
+                    <a class="lead" href="javascript:void(0);"></a>
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-warning lead" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                        先加入关注的教练
+                    </button>
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModal" tabindex="-1" style="top: 100px;">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">(○｀ 3′○)</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                                </div>
+                                <div class="modal-body">
+                                    加入成功
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-8">
+                        <h4 class="mb-3">信息</h4>
+                        <form class="needs-validation" novalidate>
+                            <div class="row">
+                                <div class="col-6 mb-3">
+                                    <label for="firstName">姓氏</label>
+                                    <input type="text" class="form-control" id="firstName" placeholder="张" value="" required>
+                                    <div class="invalid-feedback">
+                                        您的姓氏
+                                    </div>
+                                </div>
+                                <div class="col-6 mb-3">
+                                    <label for="lastName">名字</label>
+                                    <input type="text" class="form-control" id="lastName" placeholder="三" value="" required>
+                                    <div class="invalid-feedback">
+                                        君の名字
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="username">名称</label>
+                                <div class="input-group">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">@</span>
+                                    </div>
+                                    <input type="text" class="form-control" id="username" placeholder="用户名" required>
+                                    <div class="invalid-feedback" style="width: 100%;">
+                                        您的用户名
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="email">邮箱 <span class="text-muted">(Optional)</span></label>
+                                <input type="email" class="form-control" id="email" placeholder="123@example.com">
+                                <div class="invalid-feedback">
+                                    123@example.com
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="address">地址</label>
+                                <input type="text" class="form-control" id="address" placeholder="曹县二环" required>
+                                <div class="invalid-feedback">
+                                    您的地址
+                                </div>
+                            </div>
+
+                            <hr class="mb-4">
+                            <div class="custom-control custom-checkbox">
+                                <input type="checkbox" class="custom-control-input" id="save-info">
+                                <label class="custom-control-label" for="save-info">下次预约自动填写</label>
+                            </div>
+                            <hr class="mb-4">
+
+                            <h4 class="mb-3">支付方式</h4>
+
+                            <div class="my-3 row">
+                                <div class="col-4">
+                                    <div class="custom-control custom-radio">
+                                        <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+                                        <label class="custom-control-label" for="credit">信用卡</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                        <label class="custom-control-label" for="debit">微信支付</label>
+                                    </div>
+                                    <div class="custom-control custom-radio">
+                                        <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+                                        <label class="custom-control-label" for="paypal">支付宝支付</label>
+                                    </div>
+                                </div>
+                                <div class="col-8">
+                                    <div id="qrcode" style="width:150px; height:150px;"></div>
+                                </div>
+                            </div>
+                            <hr class="mb-4">
+                            <button class="btn btn-warning btn-lg btn-block" type="submit">提交并支付</button>
+                        </form>
+                    </div>
+                    <div class="col-4">
+                        <h4 class="mb-3">
+                            <span class="text-muted">套餐选择</span>
+                        </h4>
+                        <ul class="list-group mb-3" id="buyType">
+                            <li class="list-group-item d-flex align-items-center">
+                                <div class="col-9">
+                                    <h6 class="my-0">健康体魄</h6>
+                                    <small class="text-muted">一周两次课,在下班下课的空余时间适当锻炼,缓解疲劳,释放压力,得到更健康的体魄</small>
+                                </div>
+                                <div class="text-muted col-3 text-center">123<i class="bi bi-currency-yen"></i></div>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <div class="col-9">
+                                    <h6 class="my-0">自信生活</h6>
+                                    <small class="text-muted">一周五次课,更高强度的训练,是对身体的雕琢,亦是对身体的雕琢</small>
+                                </div>
+                                <div class="text-muted col-3 text-center">234<i class="bi bi-currency-yen"></i></div>
+                            </li>
+                            <li class="list-group-item d-flex align-items-center">
+                                <div class="col-9">
+                                    <h6 class="my-0">男酮之光</h6>
+                                    <small class="text-muted">一周七次课,半年后,你就是男酮之首</small>
+                                </div>
+                                <div class="text-muted col-3 text-center">345<i class="bi bi-currency-yen"></i></div>
+                            </li>
+                            <li class="list-group-item d-flex  bg-light align-items-center text-success">
+                                <div class=" col-9">
+                                    <h6 class="my-0">金轮第二</h6>
+                                    <small class="text-muted">一周十四次课,一年后,你就是金轮第二(金轮是不可超越的)</small>
+                                </div>
+                                <div class="text-muted col-3 text-center">114514<i class="bi bi-currency-yen"></i></div>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>总计(人民币)</span>
+                                <strong class="moneyTotal">114514<i class="bi bi-currency-yen"></i></strong>
+                            </li>
+                        </ul>
+
+                        <form class="card p-2">
+                            <div class="input-group">
+                                <input type="text" class="form-control" placeholder="兑换码">
+                                <div class="input-group-append">
+                                    <button type="submit" class="btn btn-secondary">兑换</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="footerContact">
+                        <h2>联系</h2>
+                        <p><i class="bi bi-geo-alt-fill"></i>冬筑</p>
+                        <p><i class="bi bi-telephone-fill"></i>012 345 67890</p>
+                        <p><i class="bi bi-envelope-fill"></i>123@qq.com</p>
+                        <div class="footerSocial">
+                            <a href=""><i class="layui-icon layui-icon-login-wechat"></i></a>
+                            <a href=""><i class="layui-icon layui-icon-login-qq"></i></a>
+                            <a href=""><i class="layui-icon layui-icon-login-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footerLink">
+                        <h2>服务</h2>
+                        <a href="UserInfo.html">课程安排</a>
+                        <a href="CoachAppointment.html">教练预约</a>
+                        <a href="https://www.bilibili.com/video/BV1R64y1d7pm?from=search&seid=1994748057239282561">肌肉金轮</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footerLink">
+                        <h2>页面</h2>
+                        <a href="Course.html">教程</a>
+                        <a href="CoachAppointment.html">教练预约</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="newsLetter">
+                        <h2>新闻</h2>
+                        <p>
+                            我不知道这里应该要写什么,但是总应该写点东西在这里,所以写了这些东西,好了,字数已经够了.
+                        </p>
+                        <div class="form">
+                            <input class="form-control" placeholder="肌肉金轮">
+                            <button class="btn">搜索</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footerMenu">
+            <div class="f-menu">
+                <a href="" ">关于我们</a>
+                <a href="" ">招贤纳士</a>
+                <a href="" ">广告服务</a>
+                <a href="" ">开发助手</a>
+                <a href="" ">问与回答</a>
+            </div>
+        </div>
+        <div class="container copyright ">
+            <div class="row ">
+                <div class="col-6 ">
+                    <p>&copy; <a href="# ">金轮健康有限公司</a>, 保留所有权利.</p>
+                </div>
+                <div class="col-6 ">
+                    <p>Designed By <a href=" ">Tan_JI</a></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("#footer .footerLink a ").prepend('<i class="bi bi-caret-right-fill "></i> ');
+        </script>
+    </div>
+    <script src="../JS/CoachAppointment.js "></script>
+    <script src="../JS/js.js "></script>
+</body>
+
+</html>

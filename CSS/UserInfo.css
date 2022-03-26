@@ -1,0 +1,148 @@
+.userHeader {
+    background: linear-gradient(rgba(180, 0, 0, 0.9), rgba(255, 80, 0, 1)), no-repeat center center;
+    background-size: cover;
+    min-width: 1500px;
+    max-width: 1800px;
+}
+
+.adminHeader {
+    background: linear-gradient(rgba(33, 33, 33, 1), rgba(100, 0, 0, 0.8)),  no-repeat center center;
+    background-size: cover;
+    min-width: 1500px;
+    max-width: 1800px;
+}
+
+.coachHeader {
+    background: linear-gradient(rgba(255, 80, 80, 1), rgba(180, 100, 100, 0.8)),  no-repeat center center;
+    background-size: cover;
+    min-width: 1500px;
+    max-width: 1800px;
+}
+
+.userAvatar {
+    display: block;
+    width: 110px;
+    height: 110px;
+    line-height: 110px;
+    border-radius: 50%;
+    top: 42px;
+    left: 58px;
+    box-shadow: 10px 10px 10px rgb(0, 0, 0);
+    background: url(../MATERIAL/img/userPhoto.jpg) no-repeat;
+    background-size: 110px;
+    overflow: hidden;
+    margin: auto;
+}
+
+.userShortInfo h2 {
+    font-size: 34px;
+    font-weight: 400;
+    line-height: 1;
+    color: #fff;
+    display: block;
+    margin-bottom: 20px;
+}
+
+.userShortInfo p{
+    color: white;
+} 
+#infoContent {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    background-size: cover;
+}
+#infoContent .container {
+    width: 1320px;
+}
+
+.card img {
+    height: 300px;
+    object-fit: cover;
+}
+
+.tab-pane {
+    min-height: 450px;
+}
+
+.nav-link {
+    color: #FF3300;
+}
+
+.nav-link:hover {
+    color: #FF3300;
+}
+
+.leftBar {
+    background-color: #fff;
+}
+
+.leftBar .nav-link.active, .leftBar .show>.nav-link {
+    color: #fff;
+    background-color: #FF3300;
+}
+
+.leftBar .nav-link {
+    height: 56px;
+    background: 0 0;
+    border: 0;
+}
+
+.rightBar {
+    background-color: #fff;
+}
+
+.rightBar .nav-link {
+    height: 46px;
+    font-weight: bold;
+}
+
+.rightBar .card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* course */
+
+
+#courseFilter {
+    padding: 0;
+    margin: -15px 0 25px 0;
+    list-style: none;
+    font-size: 0;
+    text-align: center;
+}
+
+#courseFilter li {
+    cursor: pointer;
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 15px;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 0;
+    background: #660000;
+    border: 2px solid #883333;
+    transition: .3s;
+}
+
+#courseFilter li:hover,
+#courseFilter li.filter-active {
+    background: #FF3300;
+    color: #fff;
+}
+.courseContainer .card {
+    overflow: hidden;
+    height: 200px;
+}
+.courseContainer .card-img-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: rgba(0,0,0,.3);
+}
+.courseContainer .card .card-text {
+    font-size: large;
+}

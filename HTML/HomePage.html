@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../MATERIAL/lib/layui-v2.6.8/layui/css/layui.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/bootstrap/icon.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/animate/animate.min.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/HomePage.css">
+
+    <script src="../MATERIAL/lib/js/jquery-3.3.1.js"></script>
+    <script src="../MATERIAL/lib/bootstrap/bootstrap.min.js"></script>
+    <!-- <script src="../JS/include.js"></script> -->
+    <script src="http://api.map.baidu.com/api?v=2.0&ak=67jMQ5DmYTe1TLMBKFUTcZAR"></script>
+</head>
+
+<body>
+    <div id="loader">
+        <div class="contain">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <!-- header start -->
+    <div id="header">
+        <div class="container-fluid  d-flex justify-content-between">
+            <div class="navigation">
+                <ul class="list-unstyled d-flex justify-content-start align-items-center">
+                    <li class="headerLogo">
+                        <a href="HomePage.html">
+                            <img src="../MATERIAL/logo/red_white_logo.png" alt="金轮健身">
+                        </a>
+                    </li>
+                    <li><a href="HomePage.html">首页</a></li>
+                    <li><a href="Course.html">教程</a></li>
+                    <li><a href="CoachAppointment.html">教练预约</a></li>
+                </ul>
+            </div>
+            <div class="user">
+                <div class="loginOut">
+                    <ul class="list-unstyled d-flex justify-content-start align-items-center">
+                        <li><a href="LoginRegister.html">登录</a></li>
+                        <li><a href="LoginRegister.html">注册</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- header end -->
+
+    <!-- Carousel start -->
+    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+        <!-- carousel-indicators -->
+        <div class="carousel-indicators">
+            <button data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+        <!-- carousel-inner -->
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="3000">
+                <img src="../MATERIAL/img/a.jpg" class="d-block w-100" alt="Carousel Image">
+                <div class="carousel-caption">
+                    <p class="animated fadeInRight">塑造完美身体</p>
+                    <h1 class="animated fadeInLeft">我们是专业的</h1>
+                    <a class="btn animated fadeInUp" href="CoachAppointment.html">教练预约</a>
+                </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="../MATERIAL/img/b.jpg" class="d-block w-100" alt="Carousel Image">
+                <div class="carousel-caption">
+                    <p class="animated fadeInRight">身体健康维护</p>
+                    <h1 class="animated fadeInLeft">你的健身管理专家</h1>
+                    <a class="btn animated fadeInUp" href="CoachAppointment.html">教练预约</a>
+                </div>
+            </div>
+
+            <div class="carousel-item" data-bs-interval="3000">
+                <img src="../MATERIAL/img/c.jpg" class="d-block w-100" alt="Carousel Image">
+                <div class="carousel-caption">
+                    <p class="animated fadeInRight">简单方法打造美</p>
+                    <h1 class="animated fadeInLeft">每一个细节细心指导</h1>
+                    <a class="btn animated fadeInUp" href="CoachAppointment.html">教练预约</a>
+                </div>
+            </div>
+        </div>
+        <!-- carousel-control -->
+        <button class="carousel-control-prev" data-bs-target="#myCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" data-bs-target="#myCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <!-- Carousel end -->
+
+    <!-- Course start -->
+    <div id="course">
+        <div class="container py-5" style="width: 1320px;">
+            <div class="courseTop">
+                <div class="courseTopTitle">
+                    <i class="bi bi-collection-play-fill" style="color: #FF3300;"></i>
+                    <span>教程指导</span>
+                </div>
+            </div>
+            <div class="courseContent row">
+                <div class="courseImg col-4">
+                    <a href="https://www.bilibili.com/video/BV1R64y1d7pm?from=search&seid=1994748057239282561"><img src="../MATERIAL/img/course/Snipaste_2021-06-05_10-52-57.png" alt=""></a>
+                </div>
+                <div class="courseExample col-8">
+                    <div class="row">
+                        <div class="col-3">
+                            <div class="card mb-3 shadow-sm">
+                                <a href="Course.html"><img src="../MATERIAL/img/course/1.jpg" class="card-img-top" alt="1"></a>
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <a href="">
+                                        <p class="card-text">无跳动不伤膝盖超燃脂有氧运动，20分钟无工具低强度</p>
+                                    </a>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>
+                                            <i class="bi bi-caret-right-square-fill"></i>
+                                            <span>22.3万</span>
+                                        </span>
+                                        <span>
+                                            <i class="bi bi-clock-fill"></i>
+                                            <span> 4:30</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card mb-3 shadow-sm">
+                                <a href="Course.html"><img src="../MATERIAL/img/course/2.jpg" class="card-img-top" alt="1"></a>
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <a href="">
+                                        <p class="card-text">解决男生「雌化」尴尬，脂肪胸变胸肌！不需场地器</p>
+                                    </a>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>
+                                            <i class="bi bi-caret-right-square-fill"></i>
+                                            <span> 22.3万</span>
+                                        </span>
+                                        <span>
+                                            <i class="bi bi-clock-fill"></i>
+                                            <span> 4:30</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card mb-3 shadow-sm">
+                                <a href="Course.html"><img src="../MATERIAL/img/course/3.jpg" class="card-img-top" alt="1"></a>
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <a href="">
+                                        <p class="card-text">【艾琳】最有效七分钟小腿燃脂运动 + 拉伸 | 免费18天</p>
+                                    </a>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>
+                                            <i class="bi bi-caret-right-square-fill"></i>
+                                            <span> 22.3万</span>
+                                        </span>
+                                        <span>
+                                            <i class="bi bi-clock-fill"></i>
+                                            <span> 4:30</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card mb-3 shadow-sm">
+                                <a href="Course.html"><img src="../MATERIAL/img/course/4.jpg" class="card-img-top" alt="1"></a>
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <a href="">
+                                        <p class="card-text">这动作，这音乐，看得我好上头, 一起跳健身舞!</p>
+                                    </a>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>
+                                            <i class="bi bi-caret-right-square-fill"></i>
+                                            <span> 22.3万</span>
+                                        </span>
+                                        <span>
+                                            <i class="bi bi-clock-fill"></i>
+                                            <span> 4:30</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card mb-3 shadow-sm">
+                                <a href="Course.html"><img src="../MATERIAL/img/course/5.jpg" class="card-img-top" alt="1"></a>
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <a href="">
+                                        <p class="card-text">体质很差的年轻人，该如何提高身体素质？【卓叔】</p>
+                                    </a>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>
+                                            <i class="bi bi-caret-right-square-fill"></i>
+                                            <span> 22.3万</span>
+                                        </span>
+                                        <span>
+                                            <i class="bi bi-clock-fill"></i>
+                                            <span> 4:30</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card mb-3 shadow-sm">
+                                <a href="Course.html"><img src="../MATERIAL/img/course/6.jpg" class="card-img-top" alt="1"></a>
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <a href="">
+                                        <p class="card-text">【Channel Lean】克里斯5分钟腹肌训练 | 零场地零器</p>
+                                    </a>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>
+                                            <i class="bi bi-caret-right-square-fill"></i>
+                                            <span> 22.3万</span>
+                                        </span>
+                                        <span>
+                                            <i class="bi bi-clock-fill"></i>
+                                            <span> 4:30</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card mb-3 shadow-sm">
+                                <a href="Course.html"><img src="../MATERIAL/img/course/7.jpg" class="card-img-top" alt="1"></a>
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <a href="">
+                                        <p class="card-text">从170逆袭到185cm，逆天改命增高15cm的秘诀, 快进来看看</p>
+                                    </a>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <span>
+                                            <i class="bi bi-caret-right-square-fill"></i>
+                                            <span> 22.3万</span>
+                                        </span>
+                                        <span>
+                                            <i class="bi bi-clock-fill"></i>
+                                            <span> 4:30</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-3">
+                            <div class="card mb-3 shadow-sm">
+                                <a href="Course.html"><img src="../MATERIAL/img/course/8.jpg" class="card-img-top" alt="1"></a>
+                                <div class="card-body d-flex flex-column justify-content-between">
+                                    <a href="">
+                                        <p class="card-text">如何让你的腹肌在最短时间内暴增？过来人教你了！</p>
+                                    </a>
+                                    <div class="d-flex justify-content-between align-items-center text-muted">
+                                        <span>
+                                            <i class="bi bi-caret-right-square-fill"></i>
+                                            <span> 22.3万</span>
+                                        </span>
+                                        <span>
+                                            <i class="bi bi-clock-fill"></i>
+                                            <span> 4:30</span>
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Course end -->
+
+    <!-- Knowledge start -->
+    <div id="knowledge">
+        <div class="container" style="width: 1320px;">
+            <div class="knowTop">
+                <div class="knowTopTitle">
+                    <i class="bi bi-grid-1x2-fill" style="color: #FF3300;"></i>
+                    <span>健身知识</span>
+                </div>
+            </div>
+            <div class="knowContent row">
+                <div class="col-9">
+                    <nav class="mb-3">
+                        <div class="nav nav-tabs nav-justified" id="nav-tab">
+                            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#nav-train">短期强化</button>
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-profile">长期蜕变</button>
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#nav-contact">专项练习</button>
+                        </div>
+                    </nav>
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-train">   <!-- 第一栏 -->
+                            <div class="row">
+                                <div class="col-4">
+                                    <div class="card mb-3 bg-dark text-white overflow-hidden">
+                                        <a href="Course.html#select" target="_blank" style="color: whitesmoke;">
+                                            <img src="../MATERIAL/img/team-1.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .6);">
+                                                <h5 class="card-title">腹肌撕裂者</h5>
+                                                <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                                <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card mb-3 bg-dark text-white overflow-hidden">
+                                        <a href="Course.html#select" target="_blank" style="color: whitesmoke;">
+                                            <img src="../MATERIAL/img/team-1.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .6);">
+                                                <h5 class="card-title">腹肌撕裂者</h5>
+                                                <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                                <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card mb-3 bg-dark text-white overflow-hidden">
+                                        <a href="Course.html#select" target="_blank" style="color: whitesmoke;">
+                                            <img src="../MATERIAL/img/team-1.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .6);">
+                                                <h5 class="card-title">腹肌撕裂者</h5>
+                                                <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                                <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="card mb-3 bg-dark text-white overflow-hidden">
+                                        <a href="Course.html#select" target="_blank" style="color: whitesmoke;">
+                                            <img src="../MATERIAL/img/team-1.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .6);">
+                                                <h5 class="card-title">腹肌撕裂者</h5>
+                                                <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                                <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-profile"> <!-- 第二栏 -->
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card mb-3 bg-dark text-white overflow-hidden">
+                                        <a href="Course.html#select" target="_blank" style="color: whitesmoke;">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .6);">
+                                                <h5 class="card-title">腹肌撕裂者</h5>
+                                                <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                                <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card mb-3 bg-dark text-white overflow-hidden">
+                                        <a href="Course.html#select" target="_blank" style="color: whitesmoke;">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .6);">
+                                                <h5 class="card-title">腹肌撕裂者</h5>
+                                                <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                                <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card mb-3 bg-dark text-white overflow-hidden">
+                                        <a href="Course.html#select" target="_blank" style="color: whitesmoke;">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .6);">
+                                                <h5 class="card-title">腹肌撕裂者</h5>
+                                                <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                                <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card mb-3 bg-dark text-white overflow-hidden">
+                                        <a href="Course.html#select" target="_blank" style="color: whitesmoke;">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .6);">
+                                                <h5 class="card-title">腹肌撕裂者</h5>
+                                                <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                                <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="nav-contact"> <!-- 第三栏 -->
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="card mb-3 bg-dark text-white overflow-hidden">
+                                        <a href="Course.html#select" target="_blank" style="color: whitesmoke;">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .6);">
+                                                <h5 class="card-title">腹肌撕裂者</h5>
+                                                <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                                <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card mb-3 bg-dark text-white overflow-hidden">
+                                        <a href="Course.html#select" target="_blank" style="color: whitesmoke;">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .6);">
+                                                <h5 class="card-title">腹肌撕裂者</h5>
+                                                <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                                <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card mb-3 bg-dark text-white overflow-hidden">
+                                        <a href="Course.html#select" target="_blank" style="color: whitesmoke;">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .6);">
+                                                <h5 class="card-title">腹肌撕裂者</h5>
+                                                <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                                <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="card mb-3 bg-dark text-white overflow-hidden">
+                                        <a href="Course.html#select" target="_blank" style="color: whitesmoke;">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay" style="background-color: rgba(0, 0, 0, .6);">
+                                                <h5 class="card-title">腹肌撕裂者</h5>
+                                                <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                                <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="know-recom col-3">
+                    <div class="knowRecomdTopTitle">
+                        <i class="bi bi-grid-1x2-fill" style="color: #FF3300; "></i>
+                        <span>计算工具</span>
+                    </div>
+                    <ul class="list-group">
+                        <a href="Course.html#compute"><li class="list-group-item ">一分钟了解自己</li></a>
+                        <a href="Course.html#compute"><li class="list-group-item ">标准体重计算</li></a>
+                        <a href="Course.html#compute"><li class="list-group-item ">身体质量指数</li></a>
+                        <a href="Course.html#compute"><li class="list-group-item ">基础代谢计算</li></a>
+                        <a href="Course.html#compute"><li class="list-group-item ">卡路里计算器</li></a>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Knowledge end -->
+
+    <!-- Trainer start -->
+    <div id="trainer">
+        <div class="container" style="width: 1320px;">
+            <div class="trainerTop">
+                <div class="trainerTopTitle">
+                    <i class="bi bi-person-bounding-box" style="color: #FF3300;"></i>
+                    <span>专业指导</span>
+                </div>
+            </div>
+            <div class="trainerContent row">
+                <div class="col-3 wow " data-wow-delay="0.1s">
+                    <div class="trainerItem">
+                        <div class="trainerImg">
+                            <img src="../MATERIAL/img/trainer/2.jpeg" alt="trainer Image">
+                        </div>
+                        <a href="CoachAppointment.html">
+                            <div class="trainerText">
+                                <h2>Billy Herrington</h2>
+                                <p>Billy King</p>
+                            </div>
+                        </a>
+                        <div class="trainerSocial">
+                            <a class="social-tw" href="CoachAppointment.html"><i class="layui-icon layui-icon-login-wechat"></i></a>
+                            <a class="social-fb" href="CoachAppointment.html"><i class="layui-icon layui-icon-login-qq"></i></a>
+                            <a class="social-li" href="CoachAppointment.html"><i class="layui-icon layui-icon-login-weibo"></i></a>
+                            <a class="social-in" href="CoachAppointment.html"><i class="layui-icon layui-icon-cart"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3  wow " data-wow-delay="0.2s">
+                    <div class="trainerItem">
+                        <div class="trainerImg">
+                            <img src="../MATERIAL/img/trainer/3.jpeg" alt="trainer Image">
+                        </div>
+                        <a href="CoachAppointment.html">
+                            <div class="trainerText">
+                                <h2>Van Darkholme</h2>
+                                <p>闇の妖精</p>
+                            </div>
+                        </a>
+                        <div class="trainerSocial">
+                            <a class="social-tw" href="CoachAppointment.html"><i class="layui-icon layui-icon-login-wechat"></i></a>
+                            <a class="social-fb" href="CoachAppointment.html"><i class="layui-icon layui-icon-login-qq"></i></a>
+                            <a class="social-li" href="CoachAppointment.html"><i class="layui-icon layui-icon-login-weibo"></i></a>
+                            <a class="social-in" href="CoachAppointment.html"><i class="layui-icon layui-icon-cart"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3  wow " data-wow-delay="0.3s">
+                    <div class="trainerItem">
+                        <div class="trainerImg">
+                            <img src="../MATERIAL/img/trainer/4.jpeg" alt="trainer Image">
+                        </div>
+                        <a href="CoachAppointment.html">
+                            <div class="trainerText">
+                                <h2>Ricardo Milos</h2>
+                                <p>自由的气息</p>
+                            </div>
+                        </a>
+                        <div class="trainerSocial">
+                            <a class="social-tw" href="CoachAppointment.html"><i class="layui-icon layui-icon-login-wechat"></i></a>
+                            <a class="social-fb" href="CoachAppointment.html"><i class="layui-icon layui-icon-login-qq"></i></a>
+                            <a class="social-li" href="CoachAppointment.html"><i class="layui-icon layui-icon-login-weibo"></i></a>
+                            <a class="social-in" href="CoachAppointment.html"><i class="layui-icon layui-icon-cart"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3  wow " data-wow-delay="0.4s">
+                    <div class="trainerItem">
+                        <div class="trainerImg">
+                            <img src="../MATERIAL/img/trainer/5.jpeg" alt="trainer Image">
+                        </div>
+                        <a href="CoachAppointment.html">
+                            <div class="trainerText">
+                                <h2>田所浩二</h2>
+                                <p>野兽先辈</p>
+                            </div>
+                        </a>
+                        <div class="trainerSocial">
+                            <a class="social-tw" href="CoachAppointment.html"><i class="layui-icon layui-icon-login-wechat"></i></a>
+                            <a class="social-fb" href="CoachAppointment.html"><i class="layui-icon layui-icon-login-qq"></i></a>
+                            <a class="social-li" href="CoachAppointment.html"><i class="layui-icon layui-icon-login-weibo"></i></a>
+                            <a class="social-in" href="CoachAppointment.html"><i class="layui-icon layui-icon-cart"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Trainer end -->
+
+    <div id="map">
+        <div class="container" style="width: 1320px;">
+            <div class="mapTop">
+                <div class="mapTopTitle">
+                    <i class="bi bi-map-fill" style="color: #FF3300;"></i>
+                    <span>关于金轮健身</span>
+                </div>
+            </div>
+            <div class="mapContent" style="width: 90%; margin: auto;">
+                <div style="width: 100%; height: 500px;" id="mymap"></div>
+                <div class="mapText" >
+                    <div class="jumbotron jumbotron-fluid">
+                        <div class="container">
+                            <h1 class="display-4"></h1>
+                            <p class="lead" style="color:darkgoldenrod; font-weight: 700;">
+                                金轮健身房坐落于优美的深圳大学,有汉朝汉武帝开始内设大司马.了解清楚金轮健身房到底是一种怎么样的存在，
+                                是解决一切问题的关键。 金轮健身房的发生，到底需要如何做到，不金轮健身房的发生，又会如何产生。 金轮
+                                健身房因何而发生？ 要想清楚，金轮健身房，到底是一种怎么样的存在。 金轮健身房因何而发生？ 这样看来，
+                                金轮健身房的发生，到底需要如何做到，不金轮健身房的发生，又会如何产生。 了解清楚金轮健身房到底是一
+                                种怎么样的存在，是解决一切问题的关键。 金轮健身房因何而发生？ 一般来说， 每个人都不得不面对这些问
+                                题。 在面对这种问题时， 这样看来， 对我个人而言，金轮健身房不仅仅是一个重大的事件，还可能会改变我
+                                的人生。 那么， 维龙曾经说过，要成功不需要什么特别的才能，只要把你能做的小事做得好就行了。这句话语
+                                虽然很短，但令我浮想联翩。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer start -->
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="footerContact">
+                        <h2>联系</h2>
+                        <p><i class="bi bi-geo-alt-fill"></i>冬筑</p>
+                        <p><i class="bi bi-telephone-fill"></i>012 345 67890</p>
+                        <p><i class="bi bi-envelope-fill"></i>123@qq.com</p>
+                        <div class="footerSocial">
+                            <a href=""><i class="layui-icon layui-icon-login-wechat"></i></a>
+                            <a href=""><i class="layui-icon layui-icon-login-qq"></i></a>
+                            <a href=""><i class="layui-icon layui-icon-login-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footerLink">
+                        <h2>服务</h2>
+                        <a href="UserInfo.html">课程安排</a>
+                        <a href="CoachAppointment.html">教练预约</a>
+                        <a href="https://www.bilibili.com/video/BV1R64y1d7pm?from=search&seid=1994748057239282561">肌肉金轮</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footerLink">
+                        <h2>页面</h2>
+                        <a href="Course.html">教程</a>
+                        <a href="CoachAppointment.html">教练预约</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="newsLetter">
+                        <h2>新闻</h2>
+                        <p>
+                            我不知道这里应该要写什么,但是总应该写点东西在这里,所以写了这些东西,好了,字数已经够了.
+                        </p>
+                        <div class="form">
+                            <input class="form-control" placeholder="肌肉金轮">
+                            <button class="btn">搜索</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footerMenu">
+            <div class="f-menu">
+                <a href="" ">关于我们</a>
+                <a href="" ">招贤纳士</a>
+                <a href="" ">广告服务</a>
+                <a href="" ">开发助手</a>
+                <a href="" ">问与回答</a>
+            </div>
+        </div>
+        <div class="container copyright ">
+            <div class="row ">
+                <div class="col-6 ">
+                    <p>&copy; <a href="# ">金轮健康有限公司</a>, 保留所有权利.</p>
+                </div>
+                <div class="col-6 ">
+                    <p>Designed By <a href=" ">Tan_JI</a></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("#footer .footerLink a ").prepend('<i class="bi bi-caret-right-fill "></i> ');
+        </script>
+    </div>
+    <!-- Footer end -->
+
+    <script src="../JS/js.js"></script>
+    <script src="../JS/HomePage.js"></script>
+</body>
+
+</html>

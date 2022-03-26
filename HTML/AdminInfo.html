@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="../MATERIAL/lib/layui-v2.6.8/layui/css/layui.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/layui-v2.6.8/layui/css/layui.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/bootstrap/icon.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/animate/animate.min.css">
+    <link rel="stylesheet" href="../MATERIAL/lib/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="../CSS/style.css">
+    <link rel="stylesheet" href="../CSS/UserInfo.css">
+
+
+    <script src="../MATERIAL/lib/js/jquery-3.3.1.js"></script>
+    <script src="../MATERIAL/lib/bootstrap/bootstrap.min.js"></script>
+    <script src="../MATERIAL/lib/layui-v2.6.8/layui/layui.js"></script>
+
+    <script src="../MATERIAL/lib/js/isotope.pkgd.min.js"></script>
+
+</head>
+
+<body>
+    <div id="loader">
+        <div class="contain">
+            <div class="circle"></div>
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <div id="header">
+        <div class="container-fluid  d-flex justify-content-between">
+            <div class="navigation">
+                <ul class="list-unstyled d-flex justify-content-start align-items-center">
+                    <li class="headerLogo">
+                        <a href="HomePage.html">
+                            <img src="../MATERIAL/logo/red_white_logo.png" alt="金轮健身">
+                        </a>
+                    </li>
+                    <li><a href="HomePage.html">首页</a></li>
+                    <li><a href="Course.html">教程</a></li>
+                    <li><a href="CoachAppointment.html">教练预约</a></li>
+                </ul>
+            </div>
+            <div class="user">
+                <div class="login">
+                    <ul class="list-unstyled d-flex justify-content-start align-items-center">
+                        <li class="userPhoto">
+                            <a href="UserInfo.html">
+                                <img src="../MATERIAL/img/userPhoto.jpg" alt="">
+                            </a>
+                        </li>
+                        <li><a href="AdminInfo.html">管理员</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="User">
+        <div class="container-fluid adminHeader">
+            <div class="container">
+                <div class="row" style="min-height: 200px">
+                    <div class="col-2 d-flex flex-column justify-content-center text-center">
+                        <div class="userAvatar" ng-click="layerCropt()">
+                        </div>
+                    </div>
+                    <div class="col-4 d-flex flex-column justify-content-center">
+                        <h3 class="display-4 text-white text-uppercase">管理员</h3>
+                        <div class="d-inline-flex text-white">
+                            <p class="m-0 text-uppercase"><a class="text-white" href="">123456789</a></p>
+                            <i class="fa fa-angle-double-right pt-1 px-3"></i>
+                            <p class="m-0 text-uppercase"><a class="text-white" href="">TanJI</a></p>
+                        </div>
+                    </div>
+                    <div class="col-3 d-flex flex-column justify-content-center text-center userShortInfo">
+                        <h2>12</h2>
+                        <p>用户数量</p>
+                    </div>
+                    <div class="col-3 d-flex flex-column justify-content-center text-center userShortInfo">
+                        <h2>12</h2>
+                        <p>教练数量</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="infoContent" class="py-3">
+        <div class="container">
+            <div class="row">
+                <div class="col-3 px-4 ">
+                    <div class="nav flex-column leftBar">
+                        <button class="nav-link active" data-bs-toggle="pill" data-bs-target="#info-content-user">用户管理</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#info-content-coach">教练管理</button>
+                        <button class="nav-link" data-bs-toggle="pill" data-bs-target="#info-content-course">课程管理</button>
+                    </div>
+                </div>
+                <div class="col-9 px-4">
+                    <div class="tab-content rightBar">
+                        <div class="tab-pane fade show active" id="info-content-user">
+                            <div class="px-3 py-3">
+                                <table lay-filter="userTable" id="userTable">
+                                    <thead>
+                                        <tr>
+                                            <th lay-data="{type:'checkbox', width: 50}">ID</th>
+                                            <th lay-data="{field:'ID', width:100, sort:true}">ID</th>
+                                            <th lay-data="{field:'type', width:150, sort:true}">用户类型</th>                                            
+                                            <th lay-data="{field:'username', width:140, edit:'text'}">名称</th>
+                                            <th lay-data="{field:'sex', width:100, edit:'text', align: 'center'}">性别</th>
+                                            <th lay-data="{field:'phone', width:160, edit:'text'}">电话</th>
+                                            <th lay-data="{title: '操作', width: 160, toolbar: '#userRightBar', align: 'center'}"></th>
+                                        </tr> 
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td>0001</td>
+                                            <td>普通用户</td> 
+                                            <td>甲</td>
+                                            <td>男</td>
+                                            <td>666666</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0002</td>
+                                            <td>超级用户</td>
+                                            <td>埃氏</td>
+                                            <td>男</td>
+                                            <td>123456</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0003</td>
+                                            <td>超级用户</td>
+                                            <td>幅度</td>
+                                            <td>男</td>
+                                            <td>345634</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0004</td>
+                                            <td>普通用户</td>
+                                            <td>分割</td>
+                                            <td>男</td>
+                                            <td>114514</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0005</td>
+                                            <td>超级用户</td>
+                                            <td>学生</td>
+                                            <td>女</td>
+                                            <td>223462</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0006</td>
+                                            <td>普通用户</td>
+                                            <td>Joe</td>
+                                            <td>男</td>
+                                            <td>234678</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0007</td>
+                                            <td>普通用户</td>
+                                            <td>淡然</td>
+                                            <td>男</td>
+                                            <td>645234</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0008</td>
+                                            <td>普通用户</td>
+                                            <td>阿萨</td>
+                                            <td>男</td>
+                                            <td>114514</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0009</td>
+                                            <td>普通用户</td>
+                                            <td>天若</td>
+                                            <td>女</td>
+                                            <td>223462</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0010</td>
+                                            <td>普通用户</td>
+                                            <td>横跳</td>
+                                            <td>男</td>
+                                            <td>234678</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0011</td>
+                                            <td>普通用户</td>
+                                            <td>去权威</td>
+                                            <td>男</td>
+                                            <td>345634</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0012</td>
+                                            <td>普通用户</td>
+                                            <td>华为</td>
+                                            <td>男</td>
+                                            <td>114514</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div id="userTopBar" style="display: none;">
+                                    <button type="button" class="layui-btn layui-btn-lg" lay-event="addUser" style="background-color: #f80;">添加</button>
+                                </div>
+                                <div id="userRightBar" style="display: none;">
+                                    <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" lay-event="detail">查看</button>
+                                    <button type="button" class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">删除</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="info-content-coach">
+                            <div class="px-3 py-3">
+                                <table lay-filter="coachTable" id="coachTable">
+                                    <thead>
+                                        <tr>
+                                            <th lay-data="{type:'checkbox', width: 50}">ID</th>
+                                            <th lay-data="{field:'ID', width:80, sort:true}">ID</th>
+                                            <th lay-data="{field:'username', width:150, edit:'text'}">名称</th>
+                                            <th lay-data="{field:'sex', width:60, edit:'text', align: 'center'}">性别</th>
+                                            <th lay-data="{field:'email', width:150, edit:'text'}">邮箱</th>
+                                            <th lay-data="{field:'phone', width:100, edit:'text'}">电话</th>
+                                            <th lay-data="{field:'joinTime', width: 130, sort:true}">加入时间</th>
+                                            <th lay-data="{title: '操作', width: 150, toolbar: '#coachRightBar', align: 'center'}"></th>
+                                        </tr> 
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td></td>
+                                            <td>0001</td> 
+                                            <td>金轮</td>
+                                            <td>男</td>
+                                            <td>jinlun@JL.cn</td>
+                                            <td>666666</td>
+                                            <td>2002-12-21</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0002</td>
+                                            <td>比利王</td>
+                                            <td>男</td>
+                                            <td>bili@JL.cn</td>
+                                            <td>123456</td>
+                                            <td>2008-12-21</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0003</td>
+                                            <td>暗黑佟大为</td>
+                                            <td>男</td>
+                                            <td>tdw@JL.cn</td>
+                                            <td>345634</td>
+                                            <td>2008-12-25</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0004</td>
+                                            <td>野兽先辈</td>
+                                            <td>男</td>
+                                            <td>ys@JL.cn</td>
+                                            <td>114514</td>
+                                            <td>2010-12-25</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0005</td>
+                                            <td>翠花</td>
+                                            <td>女</td>
+                                            <td>cw@JL.cn</td>
+                                            <td>223462</td>
+                                            <td>2011-12-25</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0006</td>
+                                            <td>Gearless Joe</td>
+                                            <td>男</td>
+                                            <td>joe@JL.cn</td>
+                                            <td>234678</td>
+                                            <td>2013-12-25</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0007</td>
+                                            <td>东方仗助</td>
+                                            <td>男</td>
+                                            <td>jo4@JL.cn</td>
+                                            <td>645234</td>
+                                            <td>2014-12-25</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0008</td>
+                                            <td>野兽先辈</td>
+                                            <td>男</td>
+                                            <td>ys@JL.cn</td>
+                                            <td>114514</td>
+                                            <td>2010-12-25</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0009</td>
+                                            <td>翠花</td>
+                                            <td>女</td>
+                                            <td>cw@JL.cn</td>
+                                            <td>223462</td>
+                                            <td>2011-12-25</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0010</td>
+                                            <td>Gearless Joe</td>
+                                            <td>男</td>
+                                            <td>joe@JL.cn</td>
+                                            <td>234678</td>
+                                            <td>2013-12-25</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0011</td>
+                                            <td>暗黑佟大为</td>
+                                            <td>男</td>
+                                            <td>tdw@JL.cn</td>
+                                            <td>345634</td>
+                                            <td>2008-12-25</td>
+                                        </tr>
+                                        <tr>
+                                            <td></td>
+                                            <td>0012</td>
+                                            <td>野兽先辈</td>
+                                            <td>男</td>
+                                            <td>ys@JL.cn</td>
+                                            <td>114514</td>
+                                            <td>2010-12-25</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                                <div id="coachTopBar" style="display: none;">
+                                    <button type="button" class="layui-btn layui-btn-lg" lay-event="addCoach" style="background-color: #f80;">添加</button>
+                                </div>
+                                <div id="coachRightBar" style="display: none;">
+                                    <button type="button" class="layui-btn layui-btn-primary layui-btn-sm" lay-event="detail">查看</button>
+                                    <button type="button" class="layui-btn layui-btn-danger layui-btn-sm" lay-event="del">删除</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="info-content-course">
+                            <div class="px-3 py-3">
+                                <div class="row">
+                                    <div class="col-12">
+                                        <ul id="courseFilter">
+                                            <li class="filter-active" data-filter = "*">所有课程</a></li>
+                                            <li data-filter = ".short" >短期强化班</a></li>
+                                            <li data-filter = ".long">长期蜕变班</a></li>
+                                            <li data-filter = ".special" >专项练习班</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="row courseContainer">
+                                    <div class="col-4 long py-3">
+                                        <div class="card bg-dark text-white">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay">
+                                              <h5 class="card-title">腹肌撕裂者</h5>
+                                              <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                              <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-4 short py-3">
+                                        <div class="card bg-dark text-white">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay">
+                                              <h5 class="card-title">腹肌撕裂者</h5>
+                                              <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                              <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-4 long py-3">
+                                        <div class="card bg-dark text-white">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay">
+                                              <h5 class="card-title">腹肌撕裂者</h5>
+                                              <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                              <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                    <div class="col-4 special py-3">
+                                        <div class="card bg-dark text-white">
+                                            <img src="../MATERIAL/img/team-2.jpg" class="card-img" alt="...">
+                                            <div class="card-img-overlay">
+                                              <h5 class="card-title">腹肌撕裂者</h5>
+                                              <p class="card-text">短时高强度的训练,燃烧你的潜力,燃烧你的腹肌!塑造完美八块腹肌,不再九九归一!</p>
+                                              <p class="card-text">限时优惠价: 40元/8节课</p>
+                                            </div>
+                                          </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="footerContact">
+                        <h2>联系</h2>
+                        <p><i class="bi bi-geo-alt-fill"></i>冬筑</p>
+                        <p><i class="bi bi-telephone-fill"></i>012 345 67890</p>
+                        <p><i class="bi bi-envelope-fill"></i>123@qq.com</p>
+                        <div class="footerSocial">
+                            <a href=""><i class="layui-icon layui-icon-login-wechat"></i></a>
+                            <a href=""><i class="layui-icon layui-icon-login-qq"></i></a>
+                            <a href=""><i class="layui-icon layui-icon-login-weibo"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footerLink">
+                        <h2>服务</h2>
+                        <a href="UserInfo.html">课程安排</a>
+                        <a href="CoachAppointment.html">教练预约</a>
+                        <a href="https://www.bilibili.com/video/BV1R64y1d7pm?from=search&seid=1994748057239282561">肌肉金轮</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="footerLink">
+                        <h2>页面</h2>
+                        <a href="Course.html">教程</a>
+                        <a href="CoachAppointment.html">教练预约</a>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="newsLetter">
+                        <h2>新闻</h2>
+                        <p>
+                            我不知道这里应该要写什么,但是总应该写点东西在这里,所以写了这些东西,好了,字数已经够了.
+                        </p>
+                        <div class="form">
+                            <input class="form-control" placeholder="肌肉金轮">
+                            <button class="btn">搜索</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container footerMenu">
+            <div class="f-menu">
+                <a href="" ">关于我们</a>
+                <a href="" ">招贤纳士</a>
+                <a href="" ">广告服务</a>
+                <a href="" ">开发助手</a>
+                <a href="" ">问与回答</a>
+            </div>
+        </div>
+        <div class="container copyright ">
+            <div class="row ">
+                <div class="col-6 ">
+                    <p>&copy; <a href="# ">金轮健康有限公司</a>, 保留所有权利.</p>
+                </div>
+                <div class="col-6 ">
+                    <p>Designed By <a href=" ">Tan_JI</a></p>
+                </div>
+            </div>
+        </div>
+        <script>
+            $("#footer .footerLink a ").prepend('<i class="bi bi-caret-right-fill "></i> ');
+        </script>
+    </div>
+    <script src="../JS/AdminInfo.js"></script>
+    <script src="../JS/js.js"></script>
+</body>
+
+</html>
